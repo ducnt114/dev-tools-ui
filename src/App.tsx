@@ -1,15 +1,12 @@
-import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
+import Nav from "./components/Nav";
 import JwtParser from "./pages/JwtParser";
 import JsonFormater from "./pages/JsonFormater";
 
 function App() {
   return (
-    <div className="App">
-      <nav>
-        <Link to="/jwt">Jwt</Link>
-        <Link to="/json">Json</Link>
-      </nav>
+    <div>
+      <Nav />
 
       <Routes>
         <Route path="/jwt" element={<JwtParser />}></Route>
