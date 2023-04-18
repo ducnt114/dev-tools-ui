@@ -1,5 +1,5 @@
 const JsonFormater = () => {
-  return <div>json formater</div>;
+  return <div className="text-3xl">json formater</div>;
 };
 
 export default JsonFormater;
