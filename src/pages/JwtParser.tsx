@@ -15,15 +15,15 @@ const JwtParser = () => {
       return;
     }
     const j1 = JSON.parse(Buffer.from(jwtParts[0], "base64").toString());
-    setJwtHeader(JSON.stringify(j1, null, 2));
+    setJwtHeader(JSON.stringify(j1, null, 4));
 
     const j2 = JSON.parse(Buffer.from(jwtParts[1], "base64").toString());
-    setJwtPayload(JSON.stringify(j2, null, 2));
+    setJwtPayload(JSON.stringify(j2, null, 4));
     // setJwtSig(Buffer.from(jwtParts[2], "base64").toString());
   };
 
   return (
-    <div className="absolute top-20 left-10">
+    <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <div className="columns-2">
         <div>Encoded</div>
         <div>Decoded</div>
@@ -49,6 +49,7 @@ const JwtParser = () => {
               rows={10}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="..."
+              readOnly
               value={jwtHeader}
             ></textarea>
 
@@ -59,6 +60,7 @@ const JwtParser = () => {
               rows={15}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="..."
+              readOnly
               value={jwtPayload}
             ></textarea>
 
@@ -72,6 +74,9 @@ const JwtParser = () => {
           </div>
         </div>
       </div>
+      {/* </div> */}
+      {/* </div> */}
+      {/* </main> */}
     </div>
   );
 };

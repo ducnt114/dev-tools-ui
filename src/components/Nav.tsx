@@ -2,25 +2,38 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in top-[-490px]}`}
-        >
-          <li key="jwtparser" className="md:ml-8 text-xl md:my-0 my-7">
-            <Link to="/jwt" className="text-gray-800 hover:text-gray-400 duration-500">
-              JWT Parser
-            </Link>
-          </li>
+    <nav className="bg-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            {/* <div className="flex-shrink-0">
+              <img
+                className="h-8 w-8"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company"
+              />
+            </div> */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <Link
+                  to="/jwt"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  JWT Parser
+                </Link>
 
-          <li key="jsonformater" className="md:ml-8 text-xl md:my-0 my-7">
-            <Link to="/json" className="text-gray-800 hover:text-gray-400 duration-500">
-              Json Formater
-            </Link>
-          </li>
-        </ul>
+                <Link
+                  to="/json"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Json Formater
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
